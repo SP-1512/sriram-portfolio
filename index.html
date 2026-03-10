@@ -600,10 +600,38 @@ class Shape{
   }
 }
 
-const lines=[],sparks=[],shapes=[];
+// Tiny floating particles that interact with cursor
+class InteractiveParticle{
+  constructor(){
+    this.x=Math.random()*W;
+    this.y=Math.random()*H;
+    this.vx=(Math.random()-0.5)*0.6;
+    this.vy=(Math.random()-0.5)*0.6;
+    this.sz=Math.random()*2.5+1;
+    const r=Math.random();
+    this.col=r<0.34?'#cc0000':r<0.67?'#f0f0f0':'#c9a84c';
+  }
+  update(){
+    this.x+=this.vx; this.y+=this.vy;
+    if(this.x<0||this.x>W)this.vx*=-1;
+    if(this.y<0||this.y>H)this.vy*=-1;
+    const dx=mouse.x-this.x, dy=mouse.y-this.y;
+    const dist=Math.sqrt(dx*dx+dy*dy);
+    if(dist<120){
+      const force=(120-dist)/120;
+      const ang=Math.atan2(dy,dx);
+      this.x-=Math.cos(ang)*force*4;
+      this.y-=Math.sin(ang)*force*4;
+    }
+  }
+  draw(){ct.save();ct.globalAlpha=0.7;ct.fillStyle=this.col;ct.beginPath();ct.arc(this.x,this.y,this.sz,0,Math.PI*2);ct.fill();ct.restore();}
+}
+
+const lines=[],sparks=[],shapes=[],particles=[];
 for(let i=0;i<90;i++)lines.push(new Line());
 for(let i=0;i<55;i++)sparks.push(new Spark());
 for(let i=0;i<22;i++)shapes.push(new Shape());
+for(let i=0;i<80;i++)particles.push(new InteractiveParticle());
 
 function anim(){
   ct.clearRect(0,0,W,H);
@@ -615,6 +643,7 @@ function anim(){
   lines.forEach(l=>{l.update();l.draw();});
   sparks.forEach(s=>{s.update();s.draw();});
   shapes.forEach(s=>{s.update();s.draw();});
+  particles.forEach(p=>{p.update();p.draw();});
   requestAnimationFrame(anim);
 }
 anim();
