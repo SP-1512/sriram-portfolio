@@ -934,8 +934,10 @@ footer{
           <a href="https://linkedin.com/in/sriram-pinninti" target="_blank" rel="noopener" class="clink"><span>in</span>linkedin.com/in/sriram-pinninti<span class="arr">→</span></a>
           <a href="tel:+917780291499" class="clink"><span>☎</span>+91 77802 91499<span class="arr">→</span></a>
         </div>
-        <div class="code-pf rv">
-          <div class="ch-tag" style="margin-bottom:0">Coding Profiles</div>
+      </div>
+      <div class="rv-r">
+        <div class="code-pf">
+          <div class="ch-tag" style="margin-bottom:12px">Coding Profiles</div>
           <div class="cp-grid">
             <a href="https://leetcode.com/u/Sriram_Pinninti/" target="_blank" rel="noopener" class="cp">LeetCode</a>
             <a href="https://www.hackerrank.com/profile/pinnintisriram21" target="_blank" rel="noopener" class="cp">HackerRank</a>
@@ -943,19 +945,6 @@ footer{
             <a href="https://www.geeksforgeeks.org/profile/pinnintisrkzy3" target="_blank" rel="noopener" class="cp">GeeksForGeeks</a>
             <a href="https://github.com/SP-1512" target="_blank" rel="noopener" class="cp" style="grid-column:span 2">GitHub · SP-1512</a>
           </div>
-        </div>
-      </div>
-      <div class="rv-r">
-        <div class="ct-form-wrap">
-          <div class="cf-title">Send a Message</div>
-          <div class="cf-sub">Drop a note — I respond within 24 hours.</div>
-          <form class="cform" id="cform" onsubmit="sendForm(event)">
-            <input type="text" name="name" placeholder="Your name" required autocomplete="name"/>
-            <input type="email" name="email" placeholder="Your email" required autocomplete="email"/>
-            <textarea name="message" placeholder="Your message..." required></textarea>
-            <button type="submit" id="fbtn" class="cp" style="display:inline-block;padding:12px 24px;cursor:pointer;font-size:9px;letter-spacing:.18em;align-self:flex-start;border:1px solid rgba(208,2,27,.35);color:var(--red)">Send Message →</button>
-            <div class="cf-status" id="fstat"></div>
-          </form>
         </div>
       </div>
     </div>
@@ -1219,18 +1208,7 @@ const flobs=new IntersectionObserver(ent=>{
 },{threshold:.5});
 document.querySelectorAll('section[id]').forEach(s=>flobs.observe(s));
 
-/* ── CONTACT FORM ────────────────────── */
-function sendForm(e){
-  e.preventDefault();
-  const form=e.target,btn=document.getElementById('fbtn'),st=document.getElementById('fstat');
-  const d=new FormData(form);
-  if(!d.get('name')||!d.get('email')||!d.get('message')){st.textContent='Please fill in all fields.';st.className='cf-status err';return;}
-  btn.textContent='Sending...';btn.disabled=true;
-  setTimeout(()=>{
-    st.textContent='Message sent! I\u2019ll get back to you soon.';
-    st.className='cf-status ok';form.reset();btn.textContent='Send Message \u2192';btn.disabled=false;
-  },900);
-}
+
 
 /* ── CERTIFICATE MODAL ───────────────── */
 const certModal = document.getElementById('certModal');
