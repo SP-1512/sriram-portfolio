@@ -75,8 +75,6 @@ This portfolio highlights my journey as a developer, focusing on Artificial Inte
 
 ## 📸 Preview
 
-> Add screenshots of the following sections inside the `screenshots/` folder.
-
 - Home Page
 - <img width="1893" height="940" alt="image" src="https://github.com/user-attachments/assets/fb20af9f-2af9-4790-a8d1-758cc565f3a8" />
 
