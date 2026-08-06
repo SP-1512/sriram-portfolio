@@ -778,6 +778,15 @@ nav.stuck{
   }
 }
 
+/* GOLD THEME FEATURED CARD STYLES */
+.feat.gold-theme{border-color:rgba(200,150,26,.28);}
+.feat.gold-theme:hover{border-color:rgba(200,150,26,.55);box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(200,150,26,.05);}
+.feat.gold-theme::before{background:linear-gradient(135deg,rgba(200,150,26,.05),transparent 55%);}
+.feat.gold-theme .feat-border::before,.feat.gold-theme .feat-border::after{
+  background:linear-gradient(90deg,var(--gold),var(--white),var(--gold));
+  background-size:200% 100%;
+}
+
 
 
 .f-badge{display:inline-flex;align-items:center;gap:6px;margin-bottom:14px;font-family:var(--F-mono);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);background:var(--gold3);border:1px solid rgba(200,150,26,.22);padding:5px 12px;}
@@ -1724,7 +1733,84 @@ footer{
 
     </div>
 
-    
+    <!-- STUDENT PERFORMANCE ANALYSIS FEATURED -->
+
+    <div class="feat rv gold-theme" style="margin-top:24px;">
+
+      <div class="feat-border"></div>
+
+      <!-- Left Column: Info & Actions -->
+      <div class="flagship-left">
+        <div class="f-badge" style="background:var(--gold3);border-color:rgba(200,150,26,.22);color:var(--gold);">📊 Featured Data Analytics Project</div>
+        <div class="f-title">Student <span class="g">Performance</span> Analysis</div>
+        <div class="f-sub">End-to-End Data Analytics &amp; Business Intelligence</div>
+        
+        <p class="f-desc" style="margin-bottom:32px;">An end-to-end data analytics project that analyzes student academic performance using Python and Power BI. The project includes data cleaning, exploratory data analysis (EDA), statistical analysis, business insights, and an interactive dashboard to help school management identify the factors associated with student success and make informed decisions.</p>
+
+        <div class="flagship-actions">
+          <a href="https://github.com/SP-1512/student-performance-analysis" target="_blank" class="f-btn primary">
+            <span>📂</span> GitHub Repo
+          </a>
+          <a href="https://github.com/SP-1512/student-performance-analysis/tree/main/dashboard" target="_blank" class="f-btn secondary">
+            <span>📊</span> Power BI Dashboard
+          </a>
+        </div>
+        
+        <div class="stacks" style="margin-top:32px;">
+          <span class="stk">Python</span><span class="stk">Pandas</span><span class="stk">NumPy</span><span class="stk">Matplotlib</span>
+          <span class="stk">Seaborn</span><span class="stk">Jupyter Notebook</span><span class="stk">Power BI</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Stats & Analysis Details -->
+      <div class="flagship-right">
+        <!-- Measurable Achievements Dashboard -->
+        <div class="ach-dashboard" style="margin-top:0;">
+          <div class="ach-metric">
+            <span class="ach-val">15,000</span>
+            <span class="ach-lbl">Cleaned Records</span>
+          </div>
+          <div class="ach-metric">
+            <span class="ach-val">12+</span>
+            <span class="ach-lbl">Visualizations</span>
+          </div>
+          <div class="ach-metric">
+            <span class="ach-val">0.91</span>
+            <span class="ach-lbl">Study Hours Corr</span>
+          </div>
+        </div>
+
+        <div class="f-box">
+          <div class="box-lbl">Key Contributions &amp; Analysis</div>
+          <div class="impact-txt">Performed complete data cleaning by removing duplicate records and validating data quality before analysis. Conducted exploratory data analysis using Python, Pandas, Matplotlib, and Seaborn to uncover relationships between academic, demographic, and behavioral factors. Built an interactive Power BI dashboard with KPIs, trend analysis, and slicers to communicate insights effectively. Identified study hours as the strongest factor associated with student performance and translated findings into actionable recommendations for school management.</div>
+        </div>
+
+        <div class="arch-collab-grid">
+          <div class="f-box2" style="background:var(--gold3);border:1px solid rgba(200,150,26,.12);padding:14px;margin:0;">
+            <div class="box-lbl">Analysis Workflow</div>
+            <div class="arch" style="font-size:10px;line-height:1.5;">
+              1. Business Understanding<br>
+              2. Data Cleaning &amp; Preparation<br>
+              3. Exploratory Data Analysis (EDA)<br>
+              4. Statistical &amp; Correlation Analysis<br>
+              5. Data Visualization<br>
+              6. Power BI Dashboard Development<br>
+              7. Business Insights &amp; Recommendations
+            </div>
+          </div>
+          <div class="f-box" style="margin:0;padding:14px;">
+            <div class="box-lbl">Key Insights</div>
+            <div class="impact-txt" style="font-size:10px;line-height:1.4;color:#777;">
+              &bull; Strong positive correlation (0.91) between study hours and academic scores.<br>
+              &bull; Attendance shows only a weak relationship (0.29) with academic outcomes.<br>
+              &bull; Environmental factors have minimal impact on achievement.<br>
+              &bull; Actionable recommendations developed for data-driven student interventions.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
     <!-- PERSONAL PROJECTS GRID -->
 
